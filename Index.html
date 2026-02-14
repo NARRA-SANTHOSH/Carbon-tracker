@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carbon Track</title>
+</head>
+<body>
+
+<h1>Carbon Footprint Calculator</h1>
+
+<label>Travel per month (km):</label>
+<input type="number" id="travel"><br><br>
+
+<label>Electricity usage (kWh):</label>
+<input type="number" id="electricity"><br><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<h2 id="result"></h2>
+
+<script>
+function calculate() {
+    let travel = document.getElementById("travel").value;
+    let electricity = document.getElementById("electricity").value;
+
+    let total = (travel * 0.21) + (electricity * 0.82);
+
+    document.getElementById("result").innerHTML =
+    "Total Carbon Emission: " + total.toFixed(2) + " kg CO₂ per month";
+}
+</script>
+
+</body>
+</html>
